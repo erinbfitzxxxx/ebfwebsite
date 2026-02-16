@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erin B. Fitz - PhD Candidate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pink: #fa0644;
+            --orange: #fa5300;
+            --purple: #aa02ff;
+            --gray: #e2e2e2;
+            --dark-gray: #424242;
+            --white: #FFFFFF;
+            --off-white: #FAFAFA;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--off-white);
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: stretch;
+        }
+
+        .profile-column {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            height: 100%;
+        }
+
+        .profile-image {
+            width: 100%;
+            aspect-ratio: 4/5;
+            border-radius: 20px;
+            object-fit: cover;
+            object-position: center top;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .hero-info {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 28px;
+            font-weight: 500;
+            line-height: 1.1;
+            margin: 0;
+            color: var(--dark-gray);
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--dark-gray);
+            margin: 0;
+        }
+
+        .hero-affiliation {
+            font-size: 13px;
+            color: #666;
+            margin: 0;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+
+        .hero-contact {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 400;
+            padding: 10px 8px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+
+        .contact-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .contact-link span {
+            font-size: 16px;
+        }
+
+        /* Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            height: 100%;
+            grid-template-rows: repeat(3, 1fr) auto;
+        }
+
+        .card-full-width {
+            grid-column: 1 / -1;
+        }
+
+        .card {
+            position: relative;
+            border-radius: 16px;
+            padding: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .card-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover .card-icon {
+            background: rgba(255,255,255,0.5);
+            transform: rotate(90deg);
+        }
+
+        /* Card Colors */
+        .card-about {
+            background: var(--pink);
+            color: white;
+        }
+
+        .card-education {
+            background: var(--orange);
+            color: white;
+        }
+
+        .card-research {
+            background: var(--pink);
+            color: white;
+        }
+
+        .card-research .card-icon {
+            background: rgba(255,255,255,0.3);
+            color: white;
+        }
+
+        .card-research:hover .card-icon {
+            background: rgba(255,255,255,0.5);
+        }
+
+        .card-specialization {
+            background: var(--gray);
+            color: var(--dark-gray);
+        }
+
+        .card-specialization .card-icon {
+            background: rgba(66,66,66,0.15);
+            color: var(--dark-gray);
+        }
+
+        .card-specialization:hover .card-icon {
+            background: rgba(66,66,66,0.25);
+        }
+
+        .card-grants {
+            background: var(--orange);
+            color: white;
+        }
+
+        .card-teaching {
+            background: var(--purple);
+            color: white;
+        }
+
+        .card-people {
+            background: var(--dark-gray);
+            color: white;
+        }
+
+        .card-people .card-icon {
+            background: rgba(255,255,255,0.3);
+            color: white;
+        }
+
+        .card-people:hover .card-icon {
+            background: rgba(255,255,255,0.5);
+        }
+
+        /* CV Content Area */
+        .cv-content-area {
+            max-width: 900px;
+            margin: 0 auto;
+            padding-top: 40px;
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 40px;
+            backdrop-filter: blur(8px);
+        }
+
+        .modal.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideUp 0.3s ease;
+        }
+
+        .modal-header {
+            padding: 32px 40px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 28px;
+            font-weight: 500;
+            color: var(--dark-gray);
+            margin: 0;
+        }
+
+        .modal-close {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: var(--gray);
+            cursor: pointer;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            color: var(--dark-gray);
+        }
+
+        .modal-close:hover {
+            background: var(--pink);
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 40px;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        /* CV Section Styles */
+        .cv-section {
+            margin-bottom: 40px;
+        }
+
+        .cv-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .cv-section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--orange);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--orange);
+        }
+
+        .cv-item {
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .cv-item-title {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--dark-gray);
+            margin-bottom: 4px;
+        }
+
+        .cv-item-meta {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .cv-item-description {
+            color: #555;
+            font-size: 15px;
+        }
+
+        .cv-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .cv-list li {
+            padding-left: 24px;
+            position: relative;
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 15px;
+        }
+
+        .cv-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--orange);
+            font-weight: 700;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .profile-column {
+                max-width: 320px;
+                margin: 0 auto;
+            }
+
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 24px;
+            }
+
+            .hero {
+                gap: 24px;
+            }
+
+            .profile-column {
+                max-width: 100%;
+            }
+
+            .hero-title {
+                font-size: 28px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .hero-affiliation {
+                font-size: 13px;
+            }
+
+            .hero-contact {
+                grid-template-columns: 1fr;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 24px;
+                min-height: 120px;
+            }
+
+            .card-title {
+                font-size: 20px;
+            }
+
+            .modal {
+                padding: 20px;
+            }
+
+            .modal-header {
+                padding: 24px;
+            }
+
+            .modal-body {
+                padding: 24px;
+            }
+
+            .modal-title {
+                font-size: 22px;
+            }
+
+            .cv-section-title {
+                font-size: 20px;
+            }
+        }
+
+        /* Custom Scrollbar */
+        .modal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-body::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            border-radius: 10px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb {
+            background: var(--orange);
+            border-radius: 10px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb:hover {
+            background: var(--pink);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <!-- Left Column: Profile -->
+            <div class="profile-column">
+                <img src="data:image/svg+xml,%3Csvg width='320' height='320' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='320' height='320' fill='%23E0E0E0'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='%23666' text-anchor='middle' dy='.3em'%3EYour Photo Here%3C/text%3E%3C/svg%3E" alt="Erin Fitz" class="profile-image" style="aspect-ratio: 4/5 !important; object-fit: cover !important; object-position: center top !important;">
+                
+                <div class="hero-content">
+                    <div class="hero-info">
+                        <h1 class="hero-title">Erin Fitz</h1>
+                        <h2 class="hero-subtitle">PhD Candidate</h2>
+                        <p class="hero-affiliation">
+                            Department of Political Science<br>
+                            Colorado State University
+                        </p>
+                    </div>
+                    
+                    <div class="hero-contact">
+                        <a href="mailto:erin.fitz@colostate.edu" class="contact-link">
+                            <span>✉</span> Email
+                        </a>
+                        <a href="#" class="contact-link" target="_blank">
+                            <span>🎓</span> Google Scholar
+                        </a>
+                        <a href="#" class="contact-link" target="_blank">
+                            <span>💼</span> LinkedIn
+                        </a>
+                        <a href="#" class="contact-link" target="_blank">
+                            <span>𝕏</span> X / Twitter
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Card Grid -->
+            <div class="card-grid">
+                <div class="card card-about" onclick="openModal('about')">
+                    <div class="card-icon">+</div>
+                    <div class="card-content">
+                        <h3 class="card-title">About</h3>
+                    </div>
+                </div>
+
+                <div class="card card-education" onclick="openModal('education')">
+                    <div class="card-icon">+</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Education</h3>
+                    </div>
+                </div>
+
+                <div class="card card-specialization" onclick="openModal('specialization')">
+                    <div class="card-icon">+</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Areas of Specialization</h3>
+                    </div>
+                </div>
+
+                <div class="card card-research" onclick="openModal('research')">
+                    <div class="card-icon">+</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Research</h3>
+                    </div>
+                </div>
+
+                <div class="card card-grants" onclick="openModal('grants')">
+                    <div class="card-icon">+</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Grants & Awards</h3>
+                    </div>
+                </div>
+
+                <div class="card card-teaching" onclick="openModal('teaching')">
+                    <div class="card-icon">+</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Teaching</h3>
+                    </div>
+                </div>
+
+                <a href="YOUR_GOOGLE_DRIVE_LINK_HERE" class="card card-people card-full-width" target="_blank">
+                    <div class="card-icon">↗</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Curriculum Vitae</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be dynamically inserted -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const cvData = {
+            about: {
+                title: "About",
+                content: `
+                    <div class="cv-section">
+                        <p class="cv-item-description" style="font-size: 16px; line-height: 1.8;">
+                            I am a PhD Candidate in Political Science at Colorado State University, specializing in American political behavior and political psychology. My research explores the dynamics of trust, risk perception, and political participation in the American electorate.
+                        </p>
+                        <p class="cv-item-description" style="font-size: 16px; line-height: 1.8; margin-top: 20px;">
+                            My work has been published in leading journals including <em>Party Politics</em>, <em>Public Opinion Quarterly</em>, <em>Scientific Reports</em>, and <em>Behavioural Public Policy</em>, among others.
+                        </p>
+                    </div>
+                `
+            },
+            education: {
+                title: "Education",
+                content: `
+                    <div class="cv-section">
+                        <div class="cv-item">
+                            <div class="cv-item-title">Colorado State University, Fort Collins, Colorado</div>
+                            <div class="cv-item-meta">2021 - present</div>
+                            <div class="cv-item-description">
+                                <strong>PhD Candidate in Political Science</strong><br>
+                                Committee: Kyle Saunders (Chair), Matthew Hitt, Dominik Stecuła, Kristin Olofsson
+                            </div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Georgia Gwinnett College, Lawrenceville, Georgia</div>
+                            <div class="cv-item-meta">2020</div>
+                            <div class="cv-item-description">
+                                <strong>BA in Political Science</strong>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            specialization: {
+                title: "Areas of Specialization",
+                content: `
+                    <div class="cv-section">
+                        <div class="cv-item-description" style="font-size: 16px; line-height: 1.8;">
+                            American political behavior and political psychology, including:
+                        </div>
+                        <ul class="cv-list" style="margin-top: 16px;">
+                            <li>Political participation</li>
+                            <li>Public opinion</li>
+                            <li>Judgment and decision making</li>
+                            <li>Dynamics of trust and risk</li>
+                            <li>Electoral behavior and trust</li>
+                            <li>Non-voting political participation</li>
+                        </ul>
+                    </div>
+                `
+            },
+            research: {
+                title: "Research",
+                content: `
+                    <div class="cv-section">
+                        <h3 class="cv-section-title">Peer-Reviewed Articles</h3>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Who Considers, Who Owns? Multi-Study Evidence on the Behavioral Process of Cryptocurrency Adoption in the United States</div>
+                            <div class="cv-item-meta">with Kyle L. Saunders | 2026 | Journal of Retailing and Consumer Services</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Ideological Asymmetries of Trust in Elections and Non-Voting Political Participation</div>
+                            <div class="cv-item-meta">with Kyle L. Saunders | 2026 | Party Politics</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Mindset to Gain? Framing Effects, Need for Chaos, and the Limits of 'Burning It All Down'</div>
+                            <div class="cv-item-meta">with Dominik A. Stecuła, Matthew P. Hitt, and Kyle L. Saunders | 2025 | Behavioural Public Policy</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Distrusting the Process: Electoral Trust, Operational Ideology, and Non-Voting Political Participation in the 2020 American Electorate</div>
+                            <div class="cv-item-meta">with Kyle L. Saunders | 2024 | Public Opinion Quarterly 88(SI): 843-857</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Objective Numeracy Exacerbates Framing Effects from Decision-Making Under Political Risk</div>
+                            <div class="cv-item-meta">with Dominik A. Stecuła, Matthew P. Hitt, and Kyle L. Saunders | 2024 | Scientific Reports 14(10473)</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">By Any Memes Necessary: Belief- and Chaos-Driven Motives for Sharing Conspiracy Theories on Social Media</div>
+                            <div class="cv-item-meta">with Christina E. Farhart, Joanne M. Miller, and Kyle L. Saunders | 2023 | Research & Politics 10(3)</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Going Green or Making Green? The Effects of Partisanship and Inflation on Environmental Executive Orders, 1945-2020</div>
+                            <div class="cv-item-meta">2023 | Presidential Studies Quarterly 53(1): 97-110</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Can Exceptionalism Withstand Crises? An Evaluation of the Arctic Council's Response to Climate Change and Russia's War on Ukraine</div>
+                            <div class="cv-item-meta">with Gabriella Gricius | 2022 | Global Studies Quarterly 2(3)</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Who Are the 3 Per Cent? The Connections Among Climate Change Contrarians</div>
+                            <div class="cv-item-meta">with Laura D. Young | 2021 | British Journal of Political Science 52(4): 1503-1522</div>
+                        </div>
+                    </div>
+                    <div class="cv-section">
+                        <h3 class="cv-section-title">Book Chapters</h3>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Information Processing</div>
+                            <div class="cv-item-meta">2025 | Edward Elgar Encyclopedia of Political Communication (edited by Alessandro Nai and Max Grömping)</div>
+                        </div>
+                    </div>
+                    <div class="cv-section">
+                        <h3 class="cv-section-title">Works in Progress</h3>
+                        <ul class="cv-list">
+                            <li>"Assessing the Sensitivity of Prompt Framing for Political Information" (with Kyle L. Saunders and Benjamin Burnley)</li>
+                            <li>"The Politics of Risk or Reward? Experimental Evidence on Preferences and Perceptions of Cryptocurrency in the Era of Trump" (with Kyle L. Saunders)</li>
+                            <li>"Advocacy or Ideal? Examining Scientists' Communication with Policymakers" (with Dominik Stecuła and Elizabeth Suhay)</li>
+                            <li>"Reassessing the Theory and Measures of Non-Voting Political Participation in the American Electorate" (with Kyle L. Saunders)</li>
+                        </ul>
+                    </div>
+                `
+            },
+            grants: {
+                title: "Grants and Awards",
+                content: `
+                    <div class="cv-section">
+                        <h3 class="cv-section-title">External Grants and Awards</h3>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Humane Studies Fellowship</div>
+                            <div class="cv-item-meta">2026-2027 | Institute of Humane Studies | $3,000</div>
+                            <div class="cv-item-description">For the project "Dimensions of Trust and Risk, and Their Effects on Americans' Political Participation"</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Democracy Small Grant Program</div>
+                            <div class="cv-item-meta">2026-2027 | Colorado State University OVPR | $7,000</div>
+                            <div class="cv-item-description">"Motivated Attention: Experimental Evidence on Exposure to Information and Election Trust in the United States" (with Kyle L. Saunders, PI)</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">National Artificial Intelligence Research Resource (NAIRR) Pilot</div>
+                            <div class="cv-item-meta">2025-2026 | Microsoft Azure and OpenAI | $5,000</div>
+                            <div class="cv-item-description">"Assessing the Sensitivity of Prompt Framing for Political Information" (with Kyle L. Saunders, PI)</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">NSF Doctoral Dissertation Research Grant</div>
+                            <div class="cv-item-meta">2025-2026 | National Science Foundation | $24,663</div>
+                            <div class="cv-item-description">"Doctoral Dissertation Research: Dimensions of Trust and Risk, and Their Effects on Americans' Political Participation" (with Kyle L. Saunders, PI)</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Rapoport Family Foundation Grant</div>
+                            <div class="cv-item-meta">2025-2026 | $14,000</div>
+                            <div class="cv-item-description">"Dimensions of Trust and Risk, and Their Effects on Americans' Political Participation"</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">IFES Hybl Fellowship</div>
+                            <div class="cv-item-meta">2025 | William and Kathy Hybl Fellowship | $5,000</div>
+                            <div class="cv-item-description">"Electoral Trust, Risk Attitudes, and Political Participation in the 2024 American Electorate"</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">ICPSR Scholarship for Political Science Research</div>
+                            <div class="cv-item-meta">2022 | University of Michigan | $3,800</div>
+                        </div>
+                    </div>
+                    <div class="cv-section">
+                        <h3 class="cv-section-title">Internal Grants and Awards</h3>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Conference Travel Award</div>
+                            <div class="cv-item-meta">2025 | Department of Political Science | $1,500</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Professional Development and Supply Grant</div>
+                            <div class="cv-item-meta">2024 | Graduate Student Council | $250</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Conference Travel Award</div>
+                            <div class="cv-item-meta">2024 | Department of Political Science | $1,500</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Conference Travel Award</div>
+                            <div class="cv-item-meta">2023 | Department of Political Science | $1,800</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Research Top Scholar</div>
+                            <div class="cv-item-meta">2022 | Graduate Student Council | $500</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Best Research Paper, AY 21-22</div>
+                            <div class="cv-item-meta">2022 | Department of Political Science</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">College of Liberal Arts Fellowship</div>
+                            <div class="cv-item-meta">2021 | $1,181</div>
+                        </div>
+                    </div>
+                `
+            },
+            teaching: {
+                title: "Teaching",
+                content: `
+                    <div class="cv-section">
+                        <h3 class="cv-section-title">Instructor of Record</h3>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Independent Study: Issue Polarization in the United States (POLS 495)</div>
+                            <div class="cv-item-meta">2026 | Colorado State University</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">American Government and Politics (POLS 101)</div>
+                            <div class="cv-item-meta">2026, 2025 | Colorado State University</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">US Political Parties and Elections (POLS 302)</div>
+                            <div class="cv-item-meta">2025, 2024 | Colorado State University</div>
+                        </div>
+                    </div>
+                    <div class="cv-section">
+                        <h3 class="cv-section-title">Teaching Assistant</h3>
+                        <div class="cv-item">
+                            <div class="cv-item-title">American Government and Politics (POLS 101)</div>
+                            <div class="cv-item-meta">2024, 2023, 2021 | Colorado State University</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">International Relations (POLS 232)</div>
+                            <div class="cv-item-meta">2022 | Colorado State University</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Judicial Politics (POLS 305)</div>
+                            <div class="cv-item-meta">2022 | Colorado State University</div>
+                        </div>
+                    </div>
+                    <div class="cv-section">
+                        <h3 class="cv-section-title">Advanced Research Training</h3>
+                        <div class="cv-item">
+                            <div class="cv-item-title">ICPSR Summer Program</div>
+                            <div class="cv-item-meta">2022 | University of Michigan</div>
+                            <div class="cv-item-description">
+                                Courses: Regression Analysis II, Maximum Likelihood Estimation I, Measurement, Scaling, and Dimensional Analysis, Panel Data and Longitudinal Analysis, Mathematics for Social Scientists II, Matrix Algebra
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cv-section">
+                        <h3 class="cv-section-title">Additional Training</h3>
+                        <ul class="cv-list">
+                            <li>International Society of Political Psychology (ISPP) Virtual Academy (2024)</li>
+                            <li>SciLine Media Training with Women Also Know Stuff (2022)</li>
+                            <li>Certification in Paralegal Studies, Georgia Gwinnett College (2020)</li>
+                        </ul>
+                    </div>
+                `
+            }
+        };
+
+        function openModal(section) {
+            const modal = document.getElementById('modal');
+            const title = document.getElementById('modalTitle');
+            const body = document.getElementById('modalBody');
+
+            title.textContent = cvData[section].title;
+            body.innerHTML = cvData[section].content;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on background click
+        document.getElementById('modal').addEventListener('click', (e) => {
+            if (e.target.id === 'modal') {
+                closeModal();
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
