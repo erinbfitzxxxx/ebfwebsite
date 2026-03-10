@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Erin B. Fitz - PhD Candidate</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -174,12 +175,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 4px;
+            gap: 6px;
             color: var(--dark-gray);
             text-decoration: none;
-            font-size: 10px;
-            font-weight: 400;
-            padding: 8px 4px;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 10px 16px;
             border-radius: 8px;
             background: white;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -192,15 +193,10 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.12);
         }
 
-        .contact-link span {
-            font-size: 14px;
-            font-weight: 700;
-        }
-
         .contact-icon {
-            width: 16px;
-            height: 16px;
-            fill: currentColor;
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
         }
 
         .card-icon svg {
@@ -337,13 +333,6 @@
 
         .card-cv:hover .card-icon {
             background: rgba(255,255,255,0.5);
-        }
-
-        /* CV Content Area */
-        .cv-content-area {
-            max-width: 900px;
-            margin: 0 auto;
-            padding-top: 40px;
         }
 
         /* Modal */
@@ -496,7 +485,7 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: var(--orange);
+            color: var(--coral);
             font-weight: 700;
         }
 
@@ -504,17 +493,6 @@
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         @keyframes slideUp {
@@ -558,33 +536,8 @@
                 max-width: 100%;
             }
 
-            .hero-title {
-                font-size: 28px;
-            }
-
-            .hero-subtitle {
-                font-size: 16px;
-            }
-
-            .hero-affiliation {
-                font-size: 13px;
-            }
-
-            .hero-contact {
-                grid-template-columns: 1fr;
-            }
-
             .card-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .card {
-                padding: 24px;
-                min-height: 120px;
-            }
-
-            .card-title {
-                font-size: 20px;
             }
 
             .modal {
@@ -597,14 +550,6 @@
 
             .modal-body {
                 padding: 24px;
-            }
-
-            .modal-title {
-                font-size: 22px;
-            }
-
-            .cv-section-title {
-                font-size: 20px;
             }
         }
 
@@ -630,11 +575,9 @@
 </head>
 <body>
     <div class="container">
-        <!-- Hero Section -->
         <div class="hero">
-            <!-- Left Column: Profile -->
             <div class="profile-column">
-                <img src="ebfcropped.png" alt="Erin Fitz" class="profile-image" style="aspect-ratio: 4/5 !important; object-fit: cover !important">
+                <img src="ebfcropped.png" alt="Erin Fitz" class="profile-image">
                 
                 <div class="hero-content">
                     <div class="hero-info">
@@ -672,17 +615,18 @@
                         </div>
                     </a>
                     
-<div class="hero-contact">
-    <a href="mailto:erin.fitz@colostate.edu" class="contact-link">
-        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
-            <path d="M2 7l10 7 10-7"></path>
-        </svg>
-        Email
-    </a>
-</div>
+                    <div class="hero-contact">
+                        <a href="mailto:erin.fitz@colostate.edu" class="contact-link">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                                <path d="M2 7l10 7 10-7"></path>
+                            </svg>
+                            Email
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-            <!-- Right Column: Card Grid -->
             <div class="card-grid">
                 <div class="card card-about" onclick="openModal('about')">
                     <div class="card-icon">
@@ -759,9 +703,9 @@
                 <a href="https://drive.google.com/file/d/1cQK199V92ggNFUHlk1IxHqs-HXf0KxiQ/view?usp=drive_link" class="card card-cv card-full-width" target="_blank">
                     <div class="card-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-    <line x1="5" y1="19" x2="19" y2="5"/>
-    <polyline points="12 5 19 5 19 12"/>
-</svg>
+                            <line x1="5" y1="19" x2="19" y2="5"/>
+                            <polyline points="12 5 19 5 19 12"/>
+                        </svg>
                     </div>
                     <div class="card-content">
                         <h3 class="card-title">Curriculum Vitae</h3>
@@ -771,16 +715,13 @@
         </div>
     </div>
 
-    <!-- Modal -->
     <div class="modal" id="modal">
         <div class="modal-content">
             <div class="modal-header">
                 <h2 class="modal-title" id="modalTitle"></h2>
                 <button class="modal-close" onclick="closeModal()">×</button>
             </div>
-            <div class="modal-body" id="modalBody">
-                <!-- Content will be dynamically inserted -->
-            </div>
+            <div class="modal-body" id="modalBody"></div>
         </div>
     </div>
 
@@ -793,7 +734,7 @@
                         <p class="cv-item-description" style="font-size: 16px; line-height: 1.8;">
                             As a PhD Candidate in Political Science at Colorado State University, I specialize in American political behavior and political psychology. My research asks how trust and perceptions of risk relate to political attitudes, behavior, and willingness (or not) to challenge institutional norms.
                         </p>
-                         <p class="cv-item-description" style="font-size: 16px; line-height: 1.8; margin-top: 20px;">
+                        <p class="cv-item-description" style="font-size: 16px; line-height: 1.8; margin-top: 20px;">
                             My research is supported by the National Science Foundation, Rapoport Family Foundation, Microsoft Azure (in partnership with OpenAI and the National Science Foundation), the Institute for Humane Studies, and the International Foundation for Electoral Systems (in partnership with the Election Integrity Project).
                         </p>
                         <p class="cv-item-description" style="font-size: 16px; line-height: 1.8; margin-top: 20px;">
@@ -847,42 +788,42 @@
                             <div class="cv-item-meta">with Kyle L. Saunders | 2026 | Journal of Retailing and Consumer Services</div>
                         </div>
                         <div class="cv-item">
-                            <a href="https://doi.org/10.1177/13540688261421087" target="_blank" class="cv-item-title-link">Ideological Asymmetries of Trust in Elections and Non-Voting Political Participation</a>
+                            <a href="https://doi.org/10.1177/13540688241297250" target="_blank" class="cv-item-title-link">Ideological Asymmetries of Trust in Elections and Non-Voting Political Participation</a>
                             <div class="cv-item-meta">with Kyle L. Saunders | 2026 | Party Politics</div>
                         </div>
                         <div class="cv-item">
-                            <a href="https://doi.org/10.1017/bpp.2025.10022" target="_blank" class="cv-item-title-link">Mindset to Gain? Framing Effects, Need for Chaos, and the Limits of 'Burning It All Down'</a>
+                            <a href="https://doi.org/10.1017/bpp.2024.38" target="_blank" class="cv-item-title-link">Mindset to Gain? Framing Effects, Need for Chaos, and the Limits of 'Burning It All Down'</a>
                             <div class="cv-item-meta">with Dominik A. Stecuła, Matthew P. Hitt, and Kyle L. Saunders | 2025 | Behavioural Public Policy</div>
                         </div>
                         <div class="cv-item">
-                            <a href="https://doi.org/10.1093/poq/nfae025" target="_blank" class="cv-item-title-link">Distrusting the Process: Electoral Trust, Operational Ideology, and Non-Voting Political Participation in the 2020 American Electorate</a>
+                            <a href="https://doi.org/10.1093/poq/nfae029" target="_blank" class="cv-item-title-link">Distrusting the Process: Electoral Trust, Operational Ideology, and Non-Voting Political Participation in the 2020 American Electorate</a>
                             <div class="cv-item-meta">with Kyle L. Saunders | 2024 | Public Opinion Quarterly 88(SI): 843-857</div>
                         </div>
                         <div class="cv-item">
-                            <a href="https://doi.org/10.1038/s41598-024-61099-y" target="_blank" class="cv-item-title-link">Objective Numeracy Exacerbates Framing Effects from Decision-Making Under Political Risk</a>
+                            <a href="https://doi.org/10.1038/s41598-024-61057-0" target="_blank" class="cv-item-title-link">Objective Numeracy Exacerbates Framing Effects from Decision-Making Under Political Risk</a>
                             <div class="cv-item-meta">with Dominik A. Stecuła, Matthew P. Hitt, and Kyle L. Saunders | 2024 | Scientific Reports 14(10473)</div>
                         </div>
                         <div class="cv-item">
-                            <a href="https://doi.org/10.1177/20531680231193514" target="_blank" class="cv-item-title-link">By Any Memes Necessary: Belief- and Chaos-Driven Motives for Sharing Conspiracy Theories on Social Media</a>
+                            <a href="https://doi.org/10.1177/20531680231194769" target="_blank" class="cv-item-title-link">By Any Memes Necessary: Belief- and Chaos-Driven Motives for Sharing Conspiracy Theories on Social Media</a>
                             <div class="cv-item-meta">with Christina E. Farhart, Joanne M. Miller, and Kyle L. Saunders | 2023 | Research & Politics 10(3)</div>
                         </div>
                         <div class="cv-item">
-                            <a href="https://doi.org/10.1111/psq.12818" target="_blank" class="cv-item-title-link">Going Green or Making Green? The Effects of Partisanship and Inflation on Environmental Executive Orders, 1945-2020</a>
+                            <a href="https://doi.org/10.1111/psq.12812" target="_blank" class="cv-item-title-link">Going Green or Making Green? The Effects of Partisanship and Inflation on Environmental Executive Orders, 1945-2020</a>
                             <div class="cv-item-meta">2023 | Presidential Studies Quarterly 53(1): 97-110</div>
                         </div>
                         <div class="cv-item">
-                            <a href="https://doi.org/10.1093/isagsq/ksac042" target="_blank" class="cv-item-title-link">Can Exceptionalism Withstand Crises? An Evaluation of the Arctic Council's Response to Climate Change and Russia's War on Ukraine</a>
+                            <a href="https://doi.org/10.1093/isagsq/ksac057" target="_blank" class="cv-item-title-link">Can Exceptionalism Withstand Crises? An Evaluation of the Arctic Council's Response to Climate Change and Russia's War on Ukraine</a>
                             <div class="cv-item-meta">with Gabriella Gricius | 2022 | Global Studies Quarterly 2(3)</div>
                         </div>
                         <div class="cv-item">
-                            <a href="https://doi.org/10.1017/S0007123421000442" target="_blank" class="cv-item-title-link">Who Are the 3 Per Cent? The Connections Among Climate Change Contrarians</a>
+                            <a href="https://doi.org/10.1017/S0007123421000454" target="_blank" class="cv-item-title-link">Who Are the 3 Per Cent? The Connections Among Climate Change Contrarians</a>
                             <div class="cv-item-meta">with Laura D. Young | 2021 | British Journal of Political Science 52(4): 1503-1522</div>
                         </div>
                     </div>
                     <div class="cv-section">
                         <h3 class="cv-section-title">Book Chapters</h3>
                         <div class="cv-item">
-                            <a href="https://doi.org/10.31219/osf.io/8a5ws" target="_blank" class="cv-item-title-link">Information Processing</a>
+                            <div class="cv-item-title">Information Processing</div>
                             <div class="cv-item-meta">2025 | Edward Elgar Encyclopedia of Political Communication (edited by Alessandro Nai and Max Grömping)</div>
                         </div>
                     </div>
@@ -974,41 +915,41 @@
                     </div>
                 `
             },
-         teaching: {
-    title: "Teaching",
-    content: `
-        <div class="cv-section">
-            <h3 class="cv-section-title">Instructor of Record</h3>
-            <div class="cv-item">
-                <div class="cv-item-title">Independent Study: Issue Polarization in the United States (POLS 495)</div>
-                <div class="cv-item-meta">2026 | Colorado State University</div>
-            </div>
-            <div class="cv-item">
-                <div class="cv-item-title">American Government and Politics (POLS 101)</div>
-                <div class="cv-item-meta">2026, 2025 | Colorado State University</div>
-            </div>
-            <div class="cv-item">
-                <div class="cv-item-title">US Political Parties and Elections (POLS 302)</div>
-                <div class="cv-item-meta">2025, 2024 | Colorado State University</div>
-            </div>
-        </div>
-        <div class="cv-section">
-            <h3 class="cv-section-title">Teaching Assistant</h3>
-            <div class="cv-item">
-                <div class="cv-item-title">American Government and Politics (POLS 101)</div>
-                <div class="cv-item-meta">2024, 2023, 2021 | Colorado State University</div>
-            </div>
-            <div class="cv-item">
-                <div class="cv-item-title">International Relations (POLS 232)</div>
-                <div class="cv-item-meta">2022 | Colorado State University</div>
-            </div>
-            <div class="cv-item">
-                <div class="cv-item-title">Judicial Politics (POLS 305)</div>
-                <div class="cv-item-meta">2022 | Colorado State University</div>
-            </div>
-        </div>
-    `
-}
+            teaching: {
+                title: "Teaching",
+                content: `
+                    <div class="cv-section">
+                        <h3 class="cv-section-title">Instructor of Record</h3>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Independent Study: Issue Polarization in the United States (POLS 495)</div>
+                            <div class="cv-item-meta">2026 | Colorado State University</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">American Government and Politics (POLS 101)</div>
+                            <div class="cv-item-meta">2026, 2025 | Colorado State University</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">US Political Parties and Elections (POLS 302)</div>
+                            <div class="cv-item-meta">2025, 2024 | Colorado State University</div>
+                        </div>
+                    </div>
+                    <div class="cv-section">
+                        <h3 class="cv-section-title">Teaching Assistant</h3>
+                        <div class="cv-item">
+                            <div class="cv-item-title">American Government and Politics (POLS 101)</div>
+                            <div class="cv-item-meta">2024, 2023, 2021 | Colorado State University</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">International Relations (POLS 232)</div>
+                            <div class="cv-item-meta">2022 | Colorado State University</div>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-title">Judicial Politics (POLS 305)</div>
+                            <div class="cv-item-meta">2022 | Colorado State University</div>
+                        </div>
+                    </div>
+                `
+            }
         };
 
         function openModal(section) {
@@ -1029,14 +970,12 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Close modal on background click
         document.getElementById('modal').addEventListener('click', (e) => {
             if (e.target.id === 'modal') {
                 closeModal();
             }
         });
 
-        // Close modal on Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeModal();
