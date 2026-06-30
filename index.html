@@ -44,12 +44,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(12px);ba
 .eyebrow{font-family:var(--mono);font-size:.76rem;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.3rem;display:flex;align-items:center;gap:.7rem}
 .eyebrow::before{content:"";width:28px;height:1px;background:var(--accent-dim)}
 .hero h1{font-size:clamp(2rem,4.2vw,3rem);font-weight:600;line-height:1.1;letter-spacing:-.025em}
-.hero h1 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--accent)}
+.hero h1{font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:600;line-height:1.1;letter-spacing:-.025em}
 .hero-sub{margin-top:1.5rem;font-size:clamp(1rem,2vw,1.18rem);color:var(--muted);font-family:var(--serif);line-height:1.55}
 .hero-photo{position:relative;order:-1;display:flex;flex-direction:column;justify-content:flex-end;gap:.9rem}
 @media(min-width:780px){.hero-photo{order:0}}
 .photo-frame{position:relative}
-.photo-frame img{width:100%;max-width:280px;border-radius:14px;display:block;border:1px solid var(--line);filter:saturate(.9);margin:0 auto}
+.photo-frame img{width:100%;max-width:240px;border-radius:14px;display:block;border:1px solid var(--line);filter:saturate(.9);margin:0 auto}
 .photo-frame::after{content:"";position:absolute;inset:0;border-radius:14px;box-shadow:0 0 60px -14px var(--glow);pointer-events:none}
 
 /* scholar widget — stacked card */
@@ -100,8 +100,8 @@ main{padding:2rem 0 4rem;min-width:0}
 
 .entry{padding:1rem 0;border-bottom:1px dashed var(--line);display:grid;gap:.25rem}
 .entry:last-child{border-bottom:none}
-.entry .top{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;flex-wrap:wrap}
-.entry .ttl{font-weight:500;font-size:1rem;letter-spacing:-.01em}
+.entry .top{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;flex-wrap:nowrap}
+.entry .ttl{font-weight:500;font-size:1rem;letter-spacing:-.01em;flex:1}
 .entry .yr{font-family:var(--mono);font-size:.78rem;color:var(--accent-dim);white-space:nowrap}
 .entry .sub{color:var(--muted);font-size:.9rem;font-style:italic;font-family:var(--serif)}
 .entry .sub em{color:var(--ink)}
@@ -219,7 +219,7 @@ footer a:hover{color:var(--accent)}
       <div class="entry"><div class="top"><span class="ttl">Mindset to Gain? Framing Effects, Need for Chaos, and the Limits of "Burning It All Down"</span><span class="yr">2025</span></div><div class="sub"><a href="https://doi.org/10.1017/bpp.2025.10022" target="_blank" rel="noopener"><em>Behavioural Public Policy</em></a> · with Dominik Stecuła, Matthew Hitt, and Kyle Saunders</div></div>
       <div class="entry"><div class="top"><span class="ttl">Information Processing</span><span class="yr">2025</span></div><div class="sub"><a href="https://osf.io/preprints/osf/8a5ws_v1" target="_blank" rel="noopener"><em>Edward Elgar Encyclopedia of Political Communication</em></a></div></div>
       <div class="entry"><div class="top"><span class="ttl">Distrusting the Process: Electoral Trust, Operational Ideology, and Non-Voting Political Participation in the 2020 American Electorate</span><span class="yr">2024</span></div><div class="sub"><a href="https://doi.org/10.1093/poq/nfae025" target="_blank" rel="noopener"><em>Public Opinion Quarterly</em></a> 88(SI): 843–857 · with Kyle Saunders</div></div>
-      <div class="entry"><div class="top"><span class="ttl">Ob- jective Numeracy Exacerbates Framing Effects from Decision-Making Under Political Risk</span><span class="yr">2024</span></div><div class="sub"><a href="https://doi.org/10.1038/s41598-024-61099-y" target="_blank" rel="noopener"><em>Scientific Reports</em></a> 14(10473) · with Dominik Stecuła, Matthew Hitt, and Kyle Saunders</div></div>
+      <div class="entry"><div class="top"><span class="ttl">Objective Numeracy Exacerbates Framing Effects from Decision-Making Under Political Risk</span><span class="yr">2024</span></div><div class="sub"><a href="https://doi.org/10.1038/s41598-024-61099-y" target="_blank" rel="noopener"><em>Scientific Reports</em></a> 14(10473) · with Dominik Stecuła, Matthew Hitt, and Kyle Saunders</div></div>
       <div class="entry"><div class="top"><span class="ttl">By Any Memes Necessary: Belief- and Chaos-Driven Motives for Sharing Conspiracy Theories on Social Media</span><span class="yr">2023</span></div><div class="sub"><a href="https://doi.org/10.1177/20531680231193514" target="_blank" rel="noopener"><em>Research &amp; Politics</em></a> 10(3) · with Christina Farhart, Joanne Miller, and Kyle Saunders</div></div>
       <div class="entry"><div class="top"><span class="ttl">Going Green or Making Green? The Effects of Partisanship and Inflation on Environmental Executive Orders, 1945 - 2020</span><span class="yr">2023</span></div><div class="sub"><a href="https://doi.org/10.1111/psq.12818" target="_blank" rel="noopener"><em>Presidential Studies Quarterly</em></a> 53(1): 97–110</div></div>
       <div class="entry"><div class="top"><span class="ttl">Can Exceptionalism Withstand Crises? An Evaluation of the Arctic Council’s Response to Climate Change and Russia’s War on Ukraine</span><span class="yr">2022</span></div><div class="sub"><a href="https://doi.org/10.1093/isagsq/ksac042" target="_blank" rel="noopener"><em>Global Studies Quarterly</em></a> 2(3) · with Gabriella Gricius</div></div>
