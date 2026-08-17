@@ -167,7 +167,7 @@ footer a:hover{color:var(--accent)}
       <a class="scholar" href="https://scholar.google.com/citations?user=GjwXwNEAAAAJ&hl=en" target="_blank" rel="noopener">
         <div class="gs"><span class="gdot"></span> Google Scholar <span class="arrow">↗</span></div>
         <div class="stats">
-          <span class="stat"><span class="v">9</span><span class="k">Articles</span></span>
+          <span class="stat"><span class="v">10</span><span class="k">Articles</span></span>
           <span class="stat"><span class="v">1</span><span class="k">Chapter</span></span>
           <span class="stat"><span class="v">86</span><span class="k">Citations</span></span>
           <span class="stat"><span class="v">4</span><span class="k">h-index</span></span>
@@ -198,6 +198,7 @@ footer a:hover{color:var(--accent)}
     <div class="rlabel">About Me</div>
     <a href="#education" class="on">Education</a>
     <a href="#publications">Publications</a>
+    <a href="#forthcoming">Forthcoming</a>
     <a href="#progress">Works in Progress</a>
     <a href="#grants">Grants and Awards</a>
     <a href="#teaching">Teaching</a>
@@ -234,14 +235,20 @@ footer a:hover{color:var(--accent)}
       <div class="entry"><div class="top"><span class="ttl">Who Are the 3 Per Cent? The Connections Among Climate Change Contrarians</span><span class="yr">2021</span></div><div class="sub"><a href="https://doi.org/10.1017/S0007123421000442" target="_blank" rel="noopener"><em>British Journal of Political Science</em></a> 52(4): 1503–1522 · with Laura Young</div></div>
     </section>
 
+      <!-- FORTHCOMING -->
+    <section id="forthcoming" class="sec">
+      <div class="sec-h">Works in Progress</div>
+      <div class="entry"><div class="ttl">Scientific Ideals versus Action: American Scientists' Perspectives on Communicating with Policymakers</div><div class="sub">with Dominik Stecuła and Elizabeth Suhay. Accepted for publication in <em>Science Communication</em><div></div>
+    </section>
+
     <!-- WORKS IN PROGRESS -->
     <section id="progress" class="sec">
       <div class="sec-h">Works in Progress</div>
       <div class="entry"><div class="ttl">Who Takes Which Risks? Replicating the Psychometric Structure and Latent Profiles of the Domain-Specific Risk-Taking (DOSPERT) Scale</div></div>
+      <div class="entry"><div class="ttl">Risk the Vote? Political Risk-Taking and Loss of Control in the United States</div></div>="sub">with Christina Farhart</div></div>
       <div class="entry"><div class="ttl">Large Language Model Responses to Conspiracy Theory Claims</div><div class="sub">with Kyle Saunders</div></div>
       <div class="entry"><div class="ttl">The Politics of Risk or Reward? Cryptocurrency Preferences in the Era of Trump</div><div class="sub">with Kyle Saunders</div></div>
       <div class="entry"><div class="ttl">Reassessing the Theory and Measures of Non-Voting Political Participation</div><div class="sub">with Kyle Saunders</div></div>
-      <div class="entry"><div class="ttl">Advocacy or Ideal? Examining Scientists' Communication with Policymakers</div><div class="sub">with Dominik Stecuła and Elizabeth Suhay</div></div>
     </section>
 
     <!-- GRANTS -->
@@ -342,7 +349,7 @@ footer a:hover{color:var(--accent)}
 </footer>
 
 <script>
-const ids=['education','publications','progress','grants','teaching','service','skills','cv'];
+const ids=['education','publications','forthcoming','progress','grants','teaching','service','skills','cv'];
 const all=[...document.querySelectorAll('.rail a, .railbar a')];
 function setActive(id){all.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+id));}
 const obs=new IntersectionObserver((es)=>{
