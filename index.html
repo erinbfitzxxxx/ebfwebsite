@@ -186,7 +186,7 @@ footer a:hover{color:var(--accent)}
 <div class="railbar">
   <a href="#education" class="on">Education</a>
   <a href="#article">Peer-Reviewed Articles</a>
-  <a href="#chapter">Chapter</a>
+  <a href="#chapter">Book Chapter</a>
   <a href="#forthcoming">Forthcoming</a>
   <a href="#progress">In Progress</a>
   <a href="#grants">Grants and Awards</a>
@@ -200,7 +200,7 @@ footer a:hover{color:var(--accent)}
     <div class="rlabel">About Me</div>
     <a href="#education" class="on">Education</a>
     <a href="#article">Peer-Reviewed Articles</a>
-    <a href="#chapter">Chapter</a>
+    <a href="#chapter">Book Chapter</a>
     <a href="#forthcoming">Forthcoming</a>
     <a href="#progress">Works in Progress</a>
     <a href="#grants">Grants and Awards</a>
@@ -237,9 +237,9 @@ footer a:hover{color:var(--accent)}
       <div class="entry"><div class="top"><span class="ttl">Who Are the 3 Per Cent? The Connections Among Climate Change Contrarians</span><span class="yr">2021</span></div><div class="sub"><a href="https://doi.org/10.1017/S0007123421000442" target="_blank" rel="noopener"><em>British Journal of Political Science</em></a> 52(4): 1503–1522 · with Laura Young</div></div>
     </section>
 
-       <!-- CHAPTER -->
+       <!-- BOOK CHAPTER -->
     <section id="chapter" class="sec">
-      <div class="sec-h">Chapter</div>
+      <div class="sec-h">Book Chapter</div>
       <div class="entry"><div class="top"><span class="ttl">Information Processing</span><span class="yr">2025</span></div><div class="sub"><a href="https://osf.io/preprints/osf/8a5ws_v1" target="_blank" rel="noopener"><em>Edward Elgar Encyclopedia of Political Communication</em></a></div></div>
 
       <!-- FORTHCOMING -->
@@ -260,7 +260,7 @@ footer a:hover{color:var(--accent)}
 
     <!-- GRANTS -->
     <section id="grants" class="sec">
-      <div class="sec-h">Grants &amp; Awards</div>
+      <div class="sec-h">Grants and Awards</div>
       <div class="kv">
         <div class="row"><span class="l">National Artificial Intelligence Research Resource (NAIRR) Pilot, Supplemental Support</span><span class="r">$4,571 · 2026</span></div>
         <div class="row"><span class="l">Institute for Humane Studies Fellowship</span><span class="r">$3,000 · 2026</span></div>
@@ -356,7 +356,7 @@ footer a:hover{color:var(--accent)}
 </footer>
 
 <script>
-const ids=['education','publications','forthcoming','progress','grants','teaching','service','skills','cv'];
+const ids=['education','article','chapter','forthcoming','progress','grants','teaching','service','skills','cv'];
 const all=[...document.querySelectorAll('.rail a, .railbar a')];
 function setActive(id){all.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+id));}
 const obs=new IntersectionObserver((es)=>{
